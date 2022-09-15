@@ -168,11 +168,6 @@ img {
 @media only screen and (max-device-width: 40em) {
   /* 640px */
 
-  body {
-    min-height: 11vh;
-    overflow: hidden;
-  }
-
   h1 {
     font-size: 1.8rem;
     margin-top: -3.3125rem;
