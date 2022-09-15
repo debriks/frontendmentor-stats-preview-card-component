@@ -12,6 +12,11 @@
   --paddingYDesk: 4.6rem;
   --paddingXMobile: 2.8rem;
   --paddingYMobile: 1.875rem;
+
+  --f-primary: "Inter", sans-serif;
+  --f-secondary: "Lexend Deca", sans-serif;
+  --fw-sm: 400;
+  --fw-l: 700;
 }
 
 html {
@@ -31,15 +36,15 @@ body {
   display: flex;
   align-items: center;
   min-height: calc(100vh - 1px);
-  font-family: "Inter", sans-serif;
+  font-family: var(--f-primary);
   background-color: var(--bg-dark-blue);
   color: var(--paragraph-white);
 }
 
 h1,
 h3 {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-family: var(--f-primary);
+  font-weight: var(--fw-l);
   color: var(--heading-white);
   margin-top: 0;
   padding: 0;
@@ -48,10 +53,6 @@ h3 {
 
 h1 {
   font-size: 2.2rem;
-}
-
-p {
-  margin: 0;
 }
 
 strong {
@@ -72,7 +73,7 @@ img {
   background-color: var(--card-dark-blue);
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-radius: 10px;
+  border-radius: 0.625rem;
   overflow: hidden;
   margin: 1.4rem;
 }
@@ -86,11 +87,11 @@ img {
 }
 
 .text__component p {
-  font-family: "Inter", sans-serif;
+  font-family: var(--f-primary);
   font-size: 0.9rem;
   line-height: 1.8;
   padding-right: 3rem;
-  font-weight: 400;
+  font-weight: var(--fw-sm);
   color: var(--stats-white);
 }
 
@@ -102,13 +103,14 @@ img {
 .stats__component h3 {
   font-size: 1.5rem;
   font-weight: 700;
+  margin-bottom: 0.3rem;
 }
 
 .stats__component p {
   text-transform: uppercase;
-  font-family: "Lexend Deca", sans-serif;
+  font-family: var(--f-secondary);
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: var(--fw-sm);
   letter-spacing: 0.1rem;
   color: var(--stats-white);
 }
@@ -126,7 +128,8 @@ img {
   opacity: 0.7;
 }
 
-@media only screen and (min-device-width: 640px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media only screen and (min-device-width: 40em) and (max-device-width: 64em) and (-webkit-min-device-pixel-ratio: 1) {
+  /* 640px / 1024px */
   body {
     text-align: center;
   }
@@ -162,41 +165,45 @@ img {
   }
 }
 
-@media only screen and (max-device-width: 640px) {
+@media only screen and (max-device-width: 40em) {
+  /* 640px */
+
+  body {
+    min-height: 11vh;
+    overflow: hidden;
+  }
+
   h1 {
     font-size: 1.8rem;
-    margin-top: -30px;
+    margin-top: -3.3125rem;
   }
   .wrapper {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   .text__component {
-    padding: var(--paddingXMobile) var(--paddingYMobile);
+    padding: var(--paddingXMobile) var(--paddingYMobile) 1rem;
     text-align: center;
   }
 
   .text__component p {
     font-size: 0.9rem;
-    line-height: 1.8;
     padding-right: 0rem;
+    margin-bottom: 2.5rem;
   }
   .image__component {
     order: -1;
-    max-height: 90%;
+    max-height: 80%;
   }
 
   .stats__component {
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.5rem;
   }
 
   .stats__component p {
     font-size: 0.7rem;
-  }
-
-  .stats_numbers p {
-    padding-bottom: 100px;
+    margin-bottom: 1.5rem;
   }
 }
